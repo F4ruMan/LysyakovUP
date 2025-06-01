@@ -1,0 +1,35 @@
+﻿<Window x:Class="LysyakovUP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LysyakovUP"
+        mc:Ignorable="d"
+        WindowStyle="None" Height="450" Width="1000" ResizeMode="NoResize" Background="{StaticResource PrimaryColor}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,-20" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Margin="0,0,0,0" Height="30" Width="950" MouseLeftButtonDown="Window_MouseLeftButtonDown"/>
+            <Button Name="btnState" Content="–" Width="20" Height="20" VerticalAlignment="Center" Margin="0,5,5,5" Click="btnState_Click" />
+            <Button Name="btnClose" Content="✕" Width="20" Height="20" Click="btnClose_Click" VerticalAlignment="Center" Margin="0,5,5,5" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <Label Content="Claude Monet" FontFamily="Antarctic" Margin="10,10,10,10" FontSize="42" HorizontalAlignment="Center"/>
+            <Button Name="btnDish" Content="Блюда" Margin="10,10,10,10" Height="20" Click="btnDish_Click"/>
+            <Button Name="btnOrder" Content="Заказы" Margin="10,10,10,10" Height="20" Click="btnOrder_Click"/>
+            <Button Name="btnCustomer" Content="Посетители" Margin="10,10,10,10" Height="20" Click="btnCustomer_Click"/>
+            <Button Name="btnPovar" Content="Повара" Margin="10,10,10,10" Height="20" Click="btnPovar_Click"/>
+            <Button Name="btnCategory" Content="Категории блюд" Margin="10,10,10,10" Height="20" Click="btnCategory_Click"/>
+            <Button Name="btnReport" Content="отчет" Margin="10,10,10,10" Height="20" Click="btnReport_Click"/>
+            <Button Name="btnHide" Content="Закрыть" Margin="10,10,10,10" Height="20" Click="btnHide_Click" Visibility="Hidden"/>
+        </StackPanel>
+        <Frame Name="FrTable" Grid.Row="1" Grid.Column="1" Background="{StaticResource SecondaryColor}" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

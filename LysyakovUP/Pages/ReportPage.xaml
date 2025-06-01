@@ -1,0 +1,29 @@
+﻿<Page x:Class="LysyakovUP.Pages.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LysyakovUP.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="700"
+      Title="ReportPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Right" Grid.Row="0">
+            <TextBox Name="tbSerch" Background="{StaticResource PrimaryColor}"  Margin="5,5,0,5" Width="645" HorizontalAlignment="Center"/>
+            <Button Name="btnSerch" Content="Поиск" Background="{StaticResource PrimaryColor}" Height="30" Margin="5" Click="btnSerch_Click" VerticalAlignment="Center"/>
+        </StackPanel>
+        <DataGrid Name="dgReport" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID заказа" Binding="{Binding OrederID}"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate}"/>
+                <DataGridTextColumn Header="Посетитель" Binding="{Binding Customer}"/>
+                <DataGridTextColumn Header="Общая стоимость заказа" Binding="{Binding OrderTotalAmount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

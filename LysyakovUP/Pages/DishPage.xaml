@@ -1,0 +1,56 @@
+﻿<Page x:Class="LysyakovUP.Pages.DishPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LysyakovUP.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="700"
+      Title="DishPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Right" Grid.Row="0">
+            <TextBox Name="tbSerch" Background="{StaticResource PrimaryColor}"  Margin="5,5,0,5" Width="645" HorizontalAlignment="Center"/>
+            <Button Name="btnSerch" Content="Поиск" Background="{StaticResource PrimaryColor}" Height="30" Margin="5" Click="btnSerch_Click" VerticalAlignment="Center"/>
+        </StackPanel>
+        <DataGrid Name="dgTable" AutoGenerateColumns="False" Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width = "150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"></Setter>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="170" >
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"></Setter>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория ID" Binding="{Binding CategoryID}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Состав" Binding="{Binding Ingrediense}" Width="170">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"></Setter>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Name="btnAdd" Content="Добавить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnAdd_Click"/>
+            <Button Name="btnEdit" Content="Редактировать" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnEdit_Click"/>
+            <Button Name="btnDelete" Content="Удалить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnDelete_Click"/>
+            <Button Name="btnSave" Content="Сохранить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
