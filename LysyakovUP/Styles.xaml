@@ -115,6 +115,7 @@
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Padding="{TemplateBinding Padding}">
+                        
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -451,6 +452,252 @@
     <Style TargetType="ComboBox" BasedOn="{StaticResource CustomComboBoxStyle}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource CustomComboBoxItemStyle}"/>
     </Style>
+    <!-- Стиль для ScrollBar -->
+    <Style TargetType="ScrollBar" x:Key="CustomScrollBarStyle">
+        <Setter Property="Background" Value="{StaticResource LightRowBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="Width" Value="12"/>
+        <!-- Ширина для вертикальной прокрутки -->
+        <Setter Property="Height" Value="12"/>
+        <!-- Высота для горизонтальной прокрутки -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
+                        <!-- Кнопка вверх -->
+                        <RepeatButton Grid.Row="0"
+                                      Command="ScrollBar.LineUpCommand"
+                                      Background="{StaticResource PrimaryColor}"
+                                      BorderThickness="0">
+                            <RepeatButton.Style>
+                                <Style TargetType="RepeatButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="3,3,0,0">
+                                                    <Path Data="M0,6 L6,0 L12,6 Z"
+                                                          Fill="{StaticResource TextColor}"
+                                                          Stretch="Uniform"
+                                                          Margin="3"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#8C1023"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </RepeatButton.Style>
+                        </RepeatButton>
+
+                        <!-- Трек -->
+                        <Track Grid.Row="1" x:Name="PART_Track">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand"
+                                              Background="{StaticResource LightRowBackground}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Background="{StaticResource PrimaryColor}">
+                                    <Thumb.Style>
+                                        <Style TargetType="Thumb">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Thumb">
+                                                        <Border Background="{TemplateBinding Background}"
+                                                                CornerRadius="3">
+                                                            <Rectangle Fill="Transparent"/>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsDragging" Value="True">
+                                                                <Setter Property="Background" Value="#8C1023"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Thumb.Style>
+                                </Thumb>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand"
+                                              Background="{StaticResource LightRowBackground}"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+
+                        <!-- Кнопка вниз -->
+                        <RepeatButton Grid.Row="2"
+                                      Command="ScrollBar.LineDownCommand"
+                                      Background="{StaticResource PrimaryColor}"
+                                      BorderThickness="0">
+                            <RepeatButton.Style>
+                                <Style TargetType="RepeatButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="0,0,3,3">
+                                                    <Path Data="M0,0 L6,6 L12,0 Z"
+                                                          Fill="{StaticResource TextColor}"
+                                                          Stretch="Uniform"
+                                                          Margin="3"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#8C1023"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </RepeatButton.Style>
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для горизонтального ScrollBar -->
+    <Style TargetType="ScrollBar" x:Key="CustomHorizontalScrollBarStyle">
+        <Setter Property="Background" Value="{StaticResource LightRowBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Кнопка влево -->
+                        <RepeatButton Grid.Column="0"
+                                      Command="ScrollBar.LineLeftCommand"
+                                      Background="{StaticResource PrimaryColor}"
+                                      BorderThickness="0">
+                            <RepeatButton.Style>
+                                <Style TargetType="RepeatButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="3,0,0,3">
+                                                    <Path Data="M6,0 L0,6 L6,12 Z"
+                                                          Fill="{StaticResource TextColor}"
+                                                          Stretch="Uniform"
+                                                          Margin="3"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#8C1023"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </RepeatButton.Style>
+                        </RepeatButton>
+
+                        <!-- Трек -->
+                        <Track Grid.Column="1" x:Name="PART_Track">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageLeftCommand"
+                                              Background="{StaticResource LightRowBackground}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Background="{StaticResource PrimaryColor}">
+                                    <Thumb.Style>
+                                        <Style TargetType="Thumb">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Thumb">
+                                                        <Border Background="{TemplateBinding Background}"
+                                                                CornerRadius="3">
+                                                            <Rectangle Fill="Transparent"/>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsDragging" Value="True">
+                                                                <Setter Property="Background" Value="#8C1023"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Thumb.Style>
+                                </Thumb>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageRightCommand"
+                                              Background="{StaticResource LightRowBackground}"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+
+                        <!-- Кнопка вправо -->
+                        <RepeatButton Grid.Column="2"
+                                      Command="ScrollBar.LineRightCommand"
+                                      Background="{StaticResource PrimaryColor}"
+                                      BorderThickness="0">
+                            <RepeatButton.Style>
+                                <Style TargetType="RepeatButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="0,3,3,0">
+                                                    <Path Data="M0,0 L6,6 L0,12 Z"
+                                                          Fill="{StaticResource TextColor}"
+                                                          Stretch="Uniform"
+                                                          Margin="3"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#8C1023"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </RepeatButton.Style>
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

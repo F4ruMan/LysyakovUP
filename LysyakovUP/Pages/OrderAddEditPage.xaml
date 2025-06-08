@@ -9,7 +9,7 @@
       Title="OrderAddEditPage">
 
     <Grid>
-        <Label Content="Номер заказа" HorizontalAlignment="Left" Margin="81,79,0,0" VerticalAlignment="Top" FontWeight="Medium" HorizontalContentAlignment="Right"/>
+        <Label Content="ID заказа" HorizontalAlignment="Left" Margin="110,80,0,0" VerticalAlignment="Top" FontWeight="Medium" HorizontalContentAlignment="Right"/>
         <TextBox Name="tbFirstName" HorizontalAlignment="Left" Margin="187,79,0,0" Text="{Binding currentOrder.FirstMane}" VerticalAlignment="Top" Width="120"/>
         <Button Name="btnSave" Content="Сохранить" HorizontalAlignment="Left" Margin="110,248,0,0" VerticalAlignment="Top" Height="40" Width="72" Click="btnSave_Click" Background="{StaticResource PrimaryColor}"/>
         <Button Name="btnCansel" Content="Отменить" HorizontalAlignment="Left" Margin="187,248,0,0" VerticalAlignment="Top" Height="40" Width="72" Background="{StaticResource PrimaryColor}"/>

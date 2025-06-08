@@ -31,7 +31,8 @@
             <Button Name="btnAdd" Content="Добавить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnAdd_Click"/>
             <Button Name="btnEdit" Content="Редактировать" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnEdit_Click"/>
             <Button Name="btnDelete" Content="Удалить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnDelete_Click"/>
-            <Button Name="btnBack" Content="Назад" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}"/>
+            <Button Name="btnSave" Content="Сохранить" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnSave_Click"/>
+            <Button Name="btnBack" Content="Назад" Margin="10,10,0,10" Background="{StaticResource PrimaryColor}" Click="btnBack_Click"/>
         </StackPanel>
     </Grid>
 </Page>

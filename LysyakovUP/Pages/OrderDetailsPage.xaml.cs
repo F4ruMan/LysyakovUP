@@ -64,5 +64,15 @@ namespace LysyakovUP.Pages
                 dgTable.ItemsSource = App.orderDetails;
             }
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.OrderDetails.Save();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OrderPage());
+        }
     }
 }
