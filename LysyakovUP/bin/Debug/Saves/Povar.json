@@ -1,0 +1,74 @@
+﻿[
+  {
+    "Id": 1,
+    "FirstName": "Максим",
+    "LastName": "Лавров (огузок)",
+    "PhoneNumber": "+79226548252",
+    "Email": "ogusok@gmail.com",
+    "Salary": 150000,
+    "Photo": null
+  },
+  {
+    "Id": 2,
+    "FirstName": "Денис",
+    "LastName": "Крылов",
+    "PhoneNumber": "+74566455195",
+    "Email": "denis.krylov@gmail.com",
+    "Salary": 100000,
+    "Photo": null
+  },
+  {
+    "Id": 3,
+    "FirstName": "Константин ",
+    "LastName": "Анисимов ",
+    "PhoneNumber": "+74538564825",
+    "Email": "kostik.anisimov@gmail.com",
+    "Salary": 35000,
+    "Photo": null
+  },
+  {
+    "Id": 4,
+    "FirstName": "Луи",
+    "LastName": "Бенуа",
+    "PhoneNumber": "+78466458413",
+    "Email": "lui.benua@gmail.com",
+    "Salary": 150000,
+    "Photo": null
+  },
+  {
+    "Id": 5,
+    "FirstName": "Фёдор",
+    "LastName": "Юрченко",
+    "PhoneNumber": "+78465138496",
+    "Email": "yurchenko.fdor@gmail.com",
+    "Salary": 100000,
+    "Photo": null
+  },
+  {
+    "Id": 6,
+    "FirstName": "Арсений",
+    "LastName": "Чуганин",
+    "PhoneNumber": "+75137844123",
+    "Email": "senya_chuganin@gmail.com",
+    "Salary": 100000,
+    "Photo": null
+  },
+  {
+    "Id": 7,
+    "FirstName": "Виктор",
+    "LastName": "Баринов",
+    "PhoneNumber": "+78495456789",
+    "Email": "viktor.barinov@gmail.com",
+    "Salary": 200000,
+    "Photo": null
+  },
+  {
+    "Id": 8,
+    "FirstName": "Екатерина",
+    "LastName": "Семёнова",
+    "PhoneNumber": "+78464518596",
+    "Email": "e.semenova@gmail.com",
+    "Salary": 150000,
+    "Photo": null
+  }
+]

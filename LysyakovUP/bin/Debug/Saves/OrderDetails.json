@@ -1,0 +1,58 @@
+﻿[
+  {
+    "Id": 1,
+    "OrderID": 1,
+    "DishID": 9,
+    "Quantity": 1,
+    "UnitPrice": 3500,
+    "TotalAmount": 3500
+  },
+  {
+    "Id": 2,
+    "OrderID": 1,
+    "DishID": 2,
+    "Quantity": 1,
+    "UnitPrice": 5500,
+    "TotalAmount": 5500
+  },
+  {
+    "Id": 3,
+    "OrderID": 1,
+    "DishID": 11,
+    "Quantity": 1,
+    "UnitPrice": 1500,
+    "TotalAmount": 1500
+  },
+  {
+    "Id": 4,
+    "OrderID": 2,
+    "DishID": 4,
+    "Quantity": 1,
+    "UnitPrice": 4000,
+    "TotalAmount": 4000
+  },
+  {
+    "Id": 5,
+    "OrderID": 2,
+    "DishID": 14,
+    "Quantity": 2,
+    "UnitPrice": 1500,
+    "TotalAmount": 3000
+  },
+  {
+    "Id": 6,
+    "OrderID": 3,
+    "DishID": 7,
+    "Quantity": 1,
+    "UnitPrice": 2000,
+    "TotalAmount": 2000
+  },
+  {
+    "Id": 7,
+    "OrderID": 3,
+    "DishID": 5,
+    "Quantity": 1,
+    "UnitPrice": 1500,
+    "TotalAmount": 1500
+  }
+]

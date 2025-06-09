@@ -1,0 +1,23 @@
+﻿[
+  {
+    "Id": 1,
+    "OrderNumber": "ORD-001",
+    "CustomerID": 1,
+    "OrderDate": "2025-05-01T00:00:00",
+    "PayMethod": "Картой"
+  },
+  {
+    "Id": 2,
+    "OrderNumber": "ORD-002",
+    "CustomerID": 2,
+    "OrderDate": "2025-05-02T00:00:00",
+    "PayMethod": "Наличный"
+  },
+  {
+    "Id": 3,
+    "OrderNumber": "ORD-003",
+    "CustomerID": 3,
+    "OrderDate": "2025-05-03T00:00:00",
+    "PayMethod": "Картой"
+  }
+]
